@@ -1,11 +1,17 @@
 import './style.css'
-import { BOARD_WIDTH, BOARD_HEIGHT, BLOCK_SIZE, EVEN_MOVEMENTS } from './consts'
 
 // 1. Inicializar el canvas
 const canvas = document.querySelector('canvas')
 const context = canvas.getContext('2d')
 const $score = document.querySelector('span')
 const $section = document.querySelector('section')
+const LEFT = 'ArrowLeft'
+const RIGHT = 'ArrowRight'
+const DOWN = 'ArrowDown'
+
+const BLOCK_SIZE = 20
+const BOARD_WIDTH = 14
+const BOARD_HEIGHT = 30
 
 let score = 0
 
@@ -146,19 +152,19 @@ function draw () {
 }
 
 document.addEventListener('keydown', event => {
-  if (event.key === EVEN_MOVEMENTS.LEFT) {
+  if (event.key === LEFT) {
     piece.position.x--
     if (checkCollision()) {
       piece.position.x++
     }
   }
-  if (event.key === EVEN_MOVEMENTS.RIGHT) {
+  if (event.key === RIGHT) {
     piece.position.x++
     if (checkCollision()) {
       piece.position.x--
     }
   }
-  if (event.key === EVEN_MOVEMENTS.DOWN) {
+  if (event.key === DOWN) {
     piece.position.y++
     if (checkCollision()) {
       piece.position.y--
@@ -203,7 +209,7 @@ function solidfyPiece () {
     })
   })
   // reset position
-  piece.position.x = Math.floor(BOARD_WIDTH / 2 - 2)
+  piece.position.x = Math.floor(BOARD_WIDTH / 2)
   piece.position.y = 0
   // get random piece
   piece.shape = pieces[Math.floor(Math.random() * pieces.length)]
