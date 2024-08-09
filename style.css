@@ -1,0 +1,50 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark light;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background: url('/tetriss.jpg') no-repeat center center/cover;
+}
+
+
+section {
+  position: absolute;
+  background: url('/tetris.jpg') no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  font-size: 48px;
+  place-content: center;
+  cursor: pointer;
+}
+
+#start-game {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1em 2em;
+  border: 2px solid #fff;
+  border-radius: 40px 0px 40px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #fff;
+  cursor: pointer;
+}
