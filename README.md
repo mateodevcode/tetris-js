@@ -1,6 +1,6 @@
 # tetris-js
 ## Deploy on GitHub Pages
-Para visualizar la pagina desplegada en GitHub Pages puedes dar click en el siguiente enlace. ([https://mateodevcode.github.io/tetris-js/])
+Para visualizar la pagina desplegada en GitHub Pages puedes dar click en el siguiente enlace. ([hola][https://mateodevcode.github.io/tetris-js/])
 
 # Tetris-js
 
