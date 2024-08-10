@@ -302,7 +302,7 @@ function removeRows () {
 }
 
 function puntos () {
-  const audio = new window.Audio('/musica/punto.mp3')
+  const audio = new window.Audio('musica/punto.mp3')
   audio.volume = 0.5
   audio.play()
 }
@@ -311,7 +311,7 @@ $section.addEventListener('click', () => {
   $section.remove()
   $controles.classList.remove('ocultar-controles')
   update()
-  const audio = new window.Audio('/musica/tetriss.mp3')
+  const audio = new window.Audio('musica/tetriss.mp3')
   audio.volume = 0.5
   audio.play()
 })
