@@ -44,19 +44,31 @@ section {
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.5em;
   color: #fff;
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#start-game:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#start-game > img {
+  width: 80px;
+  margin-right: 10px;
 }
 
 strong {
   user-select: none;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 strong span {
-  color: #f00;
+  color: rgb(64, 255, 0);
 }
 
 @media screen and (max-width: 600px) {
@@ -71,43 +83,45 @@ strong span {
 }
 
 .controles {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr); */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3em;
 }
 
 .controles div {
-  text-align: center;
-  text-transform: uppercase;
-  cursor: pointer;
+  display: flex;
   user-select: none;
   background: transparent;
-}
-
-.controles button:hover {
-  background-color: #ddff00;
 }
 
 #left img {
   width: 30px;
   rotate: -90deg;
   color: #fff;
+  cursor: pointer;
 }
 
 #right img {
   width: 30px;
   rotate: 90deg;
   color: #fff;
+  cursor: pointer;
 }
 
 #down img {
   width: 30px;
   rotate: 180deg;
   color: #fff;
+  cursor: pointer;
 }
 
 #up img {
   width: 30px;
   color: #fff;
+  cursor: pointer;
 }
 
 .ocultar-controles {
