@@ -4,7 +4,7 @@ Para visualizar la pagina desplegada en GitHub Pages puedes dar click en el sigu
 
 # Tetris-js
 
-![image](https://github.com/user-attachments/assets/3a59b8d0-26b5-4666-9c44-9442e1148da7)
+[![image](https://github.com/user-attachments/assets/3a59b8d0-26b5-4666-9c44-9442e1148da7)](https://mateodevcode.github.io/tetris-js/)
 
 ## Tecnologias utilizadas
 - Javascript
