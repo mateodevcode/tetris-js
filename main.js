@@ -11,6 +11,8 @@ const BLOCK_SIZE = 20
 const BOARD_WIDTH = 14
 const BOARD_HEIGHT = 30
 
+const colores = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'cyan']
+
 let score = 0
 
 canvas.width = BLOCK_SIZE * BOARD_WIDTH
@@ -107,12 +109,29 @@ const pieces = [
 // 8. auto drop
 let dropCounter = 0
 let lastTime = 0
+let velocidad = 1000
 function update (time = 0) {
   const deleteTime = time - lastTime
   lastTime = time
 
+  if (score <= 50) {
+    velocidad = 1000
+  } else if (score <= 400) {
+    velocidad = 500
+  } else if (score <= 800) {
+    velocidad = 200
+  } else if (score <= 1200) {
+    velocidad = 100
+  } else if (score <= 1600) {
+    velocidad = 50
+  } else if (score <= 2000) {
+    velocidad = 25
+  } else if (score <= 2400) {
+    velocidad = 10
+  }
+
   dropCounter += deleteTime
-  if (dropCounter > 1000) {
+  if (dropCounter > velocidad) {
     piece.position.y++
     if (checkCollision()) {
       piece.position.y--
@@ -141,7 +160,7 @@ function draw () {
   piece.shape.forEach((row, y) => {
     row.forEach((value, x) => {
       if (value) {
-        context.fillStyle = 'red'
+        context.fillStyle = colores[Math.floor(Math.random() * colores.length)]
         context.fillRect(piece.position.x + x, piece.position.y + y, 1, 1)
       }
     })
@@ -213,8 +232,9 @@ function solidfyPiece () {
   piece.shape = pieces[Math.floor(Math.random() * pieces.length)]
   // Game over
   if (checkCollision()) {
-    window.alert('Game Over')
+    window.alert(`******** Game Over ---- Score: ${score} ********`)
     board.forEach(row => row.fill(0))
+    score = 0
   }
 }
 
@@ -231,7 +251,7 @@ function removeRows () {
     const neRow = Array(BOARD_WIDTH).fill(0)
     board.unshift(neRow)
     puntos()
-    score += 10
+    score += 40
   })
 }
 

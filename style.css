@@ -47,4 +47,25 @@ section {
   font-size: 1.5em;
   color: #fff;
   cursor: pointer;
+  user-select: none;
+}
+
+strong {
+  user-select: none;
+  font-size: 30px;
+}
+
+strong span {
+  color: #f00;
+}
+
+@media screen and (max-width: 600px) {
+  #start-game {
+    font-size: 1em;
+  }
+
+  section {
+    background: url('tetris.jpg') no-repeat center center/cover;
+  }
+
 }
