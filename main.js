@@ -3,6 +3,12 @@ const canvas = document.querySelector('canvas')
 const context = canvas.getContext('2d')
 const $score = document.querySelector('span')
 const $section = document.querySelector('section')
+const $controles = document.getElementById('controles')
+const $buttonLeft = document.getElementById('left').id
+const $buttonRight = document.getElementById('right').id
+const $buttonDown = document.getElementById('down').id
+const $buttonUp = document.getElementById('up').id
+
 const LEFT = 'ArrowLeft'
 const RIGHT = 'ArrowRight'
 const DOWN = 'ArrowDown'
@@ -207,6 +213,46 @@ document.addEventListener('keydown', event => {
   }
 })
 
+// 9. Botones de control para movil
+document.addEventListener('click', event => {
+  if (event.target.alt === $buttonLeft) {
+    piece.position.x--
+    if (checkCollision()) {
+      piece.position.x++
+    }
+  }
+  if (event.target.alt === $buttonRight) {
+    piece.position.x++
+    if (checkCollision()) {
+      piece.position.x--
+    }
+  }
+  if (event.target.alt === $buttonDown) {
+    piece.position.y++
+    if (checkCollision()) {
+      piece.position.y--
+      solidfyPiece()
+      removeRows()
+    }
+  }
+
+  if (event.target.alt === $buttonUp) {
+    const rotated = []
+    for (let i = 0; i < piece.shape[0].length; i++) {
+      const row = []
+      for (let j = piece.shape.length - 1; j >= 0; j--) {
+        row.push(piece.shape[j][i])
+      }
+      rotated.push(row)
+    }
+    const previousShape = piece.shape
+    piece.shape = rotated
+    if (checkCollision()) {
+      piece.shape = previousShape
+    }
+  }
+})
+
 function checkCollision () {
   return piece.shape.find((row, y) => {
     return row.find((value, x) => {
@@ -263,6 +309,7 @@ function puntos () {
 
 $section.addEventListener('click', () => {
   $section.remove()
+  $controles.classList.remove('ocultar-controles')
   update()
   const audio = new window.Audio('tetriss.mp3')
   audio.volume = 0.5

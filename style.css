@@ -69,3 +69,47 @@ strong span {
   }
 
 }
+
+.controles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.controles div {
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+}
+
+.controles button:hover {
+  background-color: #ddff00;
+}
+
+#left img {
+  width: 30px;
+  rotate: -90deg;
+  color: #fff;
+}
+
+#right img {
+  width: 30px;
+  rotate: 90deg;
+  color: #fff;
+}
+
+#down img {
+  width: 30px;
+  rotate: 180deg;
+  color: #fff;
+}
+
+#up img {
+  width: 30px;
+  color: #fff;
+}
+
+.ocultar-controles {
+  display: none;
+}
