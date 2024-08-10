@@ -19,13 +19,12 @@ body {
   display: grid;
   place-content: center;
   height: 100vh;
-  background: url('tetriss.jpg') no-repeat center center/cover;
+  background: url('/img/tetriss.jpg') no-repeat center center/cover;
 }
-
 
 section {
   position: absolute;
-  background: url('tetris.jpg') no-repeat center center/cover;
+  background: url('/img/tetris.jpg') no-repeat center center/cover;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -77,7 +76,7 @@ strong span {
   }
 
   section {
-    background: url('tetris.jpg') no-repeat center center/cover;
+    background: url('/img/tetris.jpg') no-repeat center center/cover;
   }
 
 }
