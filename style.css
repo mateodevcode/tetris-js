@@ -89,6 +89,9 @@ strong span {
   flex-direction: row;
   justify-content: center;
   gap: 3em;
+  background-color: rgba(50, 66, 205, 0.19);
+  padding: 2px;
+  border-radius: 10px;
 }
 
 .controles div {
